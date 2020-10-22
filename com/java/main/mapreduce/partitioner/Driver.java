@@ -1,4 +1,4 @@
-package mapreduce;
+package mapreduce.partitioner;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -26,11 +26,13 @@ public class Driver {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);
 
+		job.setPartitionerClass(MyPartitioner.class);
+
 		job.setNumReduceTasks(17);
 
 		FileInputFormat.addInputPath(job, new Path("/test"));
 
-		FileOutputFormat.setOutputPath(job, new Path("/out/napreduce"));
+		FileOutputFormat.setOutputPath(job, new Path("/out/partitioner"));
 
 		job.waitForCompletion(true);
 

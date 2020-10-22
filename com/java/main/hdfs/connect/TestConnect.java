@@ -1,4 +1,4 @@
-package connect;
+package hdfs.connect;
 
 import java.net.URI;
 

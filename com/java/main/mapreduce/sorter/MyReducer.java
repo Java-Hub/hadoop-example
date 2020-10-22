@@ -1,4 +1,4 @@
-package sorter;
+package mapreduce.sorter;
 
 import java.io.IOException;
 

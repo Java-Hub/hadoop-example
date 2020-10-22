@@ -1,4 +1,4 @@
-package test;
+package mapreduce.sorter;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,8 +6,6 @@ import java.nio.file.Files;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
-
-import sorter.MyKey;
 
 public class TestMyKey {
 

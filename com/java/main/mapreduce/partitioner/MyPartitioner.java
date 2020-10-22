@@ -1,4 +1,4 @@
-package partitioner;
+package mapreduce.partitioner;
 
 import java.util.Arrays;
 

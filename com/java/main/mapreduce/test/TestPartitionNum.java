@@ -1,4 +1,4 @@
-package test;
+package mapreduce.test;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,8 +1,8 @@
-package sorter;
+package mapreduce.primary;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.NullWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -21,14 +21,16 @@ public class Driver {
 		job.setMapperClass(MyMapper.class);
 		job.setReducerClass(MyReducer.class);
 
-		job.setMapOutputKeyClass(MyKey.class);
-		job.setMapOutputValueClass(NullWritable.class);
-		job.setOutputKeyClass(MyKey.class);
-		job.setOutputValueClass(NullWritable.class);
+		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputValueClass(Text.class);
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(Text.class);
 
-		FileInputFormat.addInputPath(job, new Path("/person"));
+		job.setNumReduceTasks(17);
 
-		FileOutputFormat.setOutputPath(job, new Path("/out/sorter/16"));
+		FileInputFormat.addInputPath(job, new Path("/test"));
+
+		FileOutputFormat.setOutputPath(job, new Path("/out/napreduce"));
 
 		job.waitForCompletion(true);
 
