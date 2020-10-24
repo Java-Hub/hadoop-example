@@ -28,7 +28,7 @@ public class Driver {
 
 		FileInputFormat.addInputPath(job, new Path("/person"));
 
-		FileOutputFormat.setOutputPath(job, new Path("/out/sorter/16"));
+		FileOutputFormat.setOutputPath(job, new Path("/out/sorter"));
 
 		job.waitForCompletion(true);
 

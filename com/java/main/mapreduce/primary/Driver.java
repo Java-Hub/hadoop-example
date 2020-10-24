@@ -30,7 +30,7 @@ public class Driver {
 
 		FileInputFormat.addInputPath(job, new Path("/test"));
 
-		FileOutputFormat.setOutputPath(job, new Path("/out/napreduce"));
+		FileOutputFormat.setOutputPath(job, new Path("/out/mapreduce"));
 
 		job.waitForCompletion(true);
 
